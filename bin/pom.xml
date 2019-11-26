@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.feaa.msd</groupId>
+	<artifactId>msd.t2_c3.spring_domain</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<org.springframework.version>5.0.6.RELEASE</org.springframework.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+		<junit.version>4.12</junit.version>
+		
+		<!-- maven-plugins' versions -->
+		<version.maven.compiler.plugin>3.8.0</version.maven.compiler.plugin>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+	
+	<repositories>
+		<repository>
+			<id>atlassian</id>
+			<url>https://packages.atlassian.com/maven-3rdparty/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<!-- Spring Core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		
+		<!-- Spring Web MVC -->
+		 <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet-api.version}</version>
+        </dependency>
+        
+        <!-- Spring test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+        <!-- Spring Data Jpa -->
+        <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.hibernate</groupId>
+		   <artifactId>hibernate-entitymanager</artifactId>
+		   <version>5.2.10.Final</version>
+		   <scope>runtime</scope>
+		</dependency>
+		<!-- 
+		<dependency>
+	        <groupId>com.oracle</groupId>
+	        <artifactId>ojdbc8</artifactId>
+	        <version>12.2.0.1</version>
+	        <systemPath>${basedir}/lib/ojdbc8.jar</systemPath>
+	        <scope>system</scope>
+	    </dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
+		<dependency>
+		    <groupId>com.oracle</groupId>
+		    <artifactId>ojdbc6</artifactId>
+		    <version>12.1.0.1-atlassian-hosted</version>
+		    <scope>runtime</scope>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat9-maven-plugin</artifactId>
+                <version>9.0.12</version>
+                <configuration>
+                    <path>/</path>
+                </configuration>
+            </plugin>		
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven.compiler.plugin}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
