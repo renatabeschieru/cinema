@@ -22,7 +22,7 @@
 		<hibernate-validator.version>6.0.2.Final</hibernate-validator.version>
 		<javax.el-api.version>3.0.0</javax.el-api.version>
 		<javax.el.version>2.2.6</javax.el.version>
-		<spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
+		<spring-data-jpa.version>2.1.9.RELEASE</spring-data-jpa.version>
 		<commons-beanutils.version>1.8.3</commons-beanutils.version>
 		
 		<!-- maven-plugins' versions -->
