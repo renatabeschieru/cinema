@@ -23,7 +23,7 @@
 		<javax.el-api.version>3.0.0</javax.el-api.version>
 		<javax.el.version>2.2.6</javax.el.version>
 		<spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
-		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
 		
 		<!-- maven-plugins' versions -->
 		<maven-war-plugin.version>3.2.3</maven-war-plugin.version>
