@@ -9,7 +9,7 @@
 
 	<properties>
 		<!-- Spring Framework version -->
-		<org.springframework.version>5.2.0.RELEASE</org.springframework.version>
+		<org.springframework.version>5.3.18</org.springframework.version>
 		
 		<!-- Spring App deps' versions -->
 		<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
